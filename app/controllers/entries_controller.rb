@@ -1,7 +1,17 @@
+require 'debugger'
 class EntriesController < ApplicationController
   def index
     feed = Feed.find(params[:feed_id])
-    render :json => feed.entries
+    if feed.updated_at > 2.minutes.ago
+      feed.reload
+    end
+      render :json => feed.entries
+  end
+
+  def show
+    @entry = Entry.find(params[:id])
+    feed = @entry.feed
+    render :json => feed.to_json(:include => :entries)
   end
 
   private

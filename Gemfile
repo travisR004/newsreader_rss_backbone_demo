@@ -33,8 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
+gem 'bcrypt', require: 'bcrypt'
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -42,8 +41,13 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 gem 'simple-rss'
 group :development, :test do
   gem 'rspec-rails'
 end
+gem 'simple-rss'
+
+gem 'backbone-on-rails'
+gem 'twitter-bootstrap-rails'
+gem 'serialize_json-rails'

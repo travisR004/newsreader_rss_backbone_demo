@@ -1,0 +1,8 @@
+<% if (entry){ %>
+  <%= entry.escape("title") %>
+  <p><a href="<%= entry.escape("description") %>">Link to article</a></p>
+
+  <p><%= JSON.parse(entry.get('json'))["description"].split('&')[0] %></p>
+
+  <p><a href="#<%= feed.url() %>">Back to Feed</a></p>
+<% } %>
